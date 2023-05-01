@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - include:
+      file: db/changeset/create-table-users.sql
+  - include:
+      file: db/changeset/create-table-country.sql
+  - include:
+      file: db/changeset/create-table-region.sql
+  - include:
+      file: db/changeset/create-table-city.sql
+  - include:
+      file: db/changeset/create-table-events.sql
+  - include:
+      file: db/changeset/create-table-user_events.sql
+  - include:
+      file: db/changeset/create-table-comment.sql
+  - include:
+      file: db/changeset/create-table-eventsrating.sql
+  - include:
+      file: db/changeset/create-table-shedlock.sql
+  - include:
+      file: db/changeset/insert-masterdata-CRC.sql
+

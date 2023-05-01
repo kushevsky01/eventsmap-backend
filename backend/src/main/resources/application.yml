@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/eventsmap}
+    username: ${DATASOURCE_USERNAME:kushevsky01}
+    password: ${DATASOURCE_PASSWORD:145673}
+
+#    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:32768/postgres}
+#    username: ${DATASOURCE_USERNAME:postgres}
+#    password: ${DATASOURCE_PASSWORD:postgrespw}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        hbm2ddl:
+          auto: validate
+  liquibase:
+      enabled: true
+      change-log: /db/changelog/db.changelog-master.yaml
+  session:
+    store-type: redis
+
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+#  servlet:
+#    session:
+#      cookie:
+#        max-age: P365D

@@ -1,0 +1,9 @@
+--liquibase formatted sql
+--changeset TestUsers_sql:1
+-- auto-generated definition
+CREATE TABLE shedlock(
+    name VARCHAR(64) NOT NULL,
+    lock_until TIMESTAMP NOT NULL,
+    locked_at TIMESTAMP NOT NULL,
+    locked_by VARCHAR(255) NOT NULL,
+    PRIMARY KEY (name));
